@@ -60,4 +60,43 @@ function displayquetions(index){
         option[i].setAttribute("onclick", "optionSelected(this)");
     }
 }
+const next_button = document.querySelector("footer .next_button");
+const bottom_ques_counter = document.querySelector("header .sum_qstn");
+
+// if Next Question button clicked
+next_button.onclick = ()=>{
+    if(question_index < questions.length - 1){ //if question count is less than total question length
+        questionNo++;//increment the questionNo value
+        question_index++; //increment the question_index value
+        questioncount(questionNo); //passing questionNo value to questioncount
+        displayquestions(question_index); //calling showQestions function
+        next_button.classList.remove("show"); //hide the next button
+    }else{
+        clearInterval(counter); //clear counter
+        clearInterval(counterLine); //clear counterLine
+        displayresult(); //calling displayresult function 
+    }
+}
+
+//if user clicked on option
+function clicked_option(answer){
+
+    let particanswers = answer.textContent; //getting user selected option
+    let correctanswers = questions[question_index].answer; //getting correct answer from array
+    const allOptions = option_list.children.length; //getting all option items
+    
+    if(particanswers == correctanswers){ //if user selected option is equal to array's correct answer
+        participscore += 1; //upgrading score value with 1
+        answer.classList.add("correct"); //adding green color to correct selected option
+        console.log("Your correct answers = " + participscore); 
+    }else{
+        answer.classList.add("incorrect"); //adding red color to correct selected option
+        console.log("Wrong Answer =" + participscore)
+    }
+    
+    for(i=0; i < allOptions; i++){
+        option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
+    }
+    next_button.classList.add("show"); //display the next button if user selected any option
+}
 
