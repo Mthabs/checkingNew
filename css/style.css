@@ -269,4 +269,26 @@ border: 3px solid red;
     border: 1px solid #343a40;
     user-select: none;
 }
+.quiz_page header .time_line{
+    position: absolute;
+    bottom: 0px;
+    margin-left: 120px;
+    width: 80%;
+    height: 30px;
+    background: #4FD1C5;
+}
+.quiz_page header .sum_qstn span{
+    display: flex;
+    user-select: none;
+    font-size: 20px;
+}
+
+.quiz_page header .sum_qstn span p{
+    font-weight: 500;
+    padding: 0 5px;
+}
+
+.quiz_page header .sum_qstn span p:first-child{
+    padding-left: 0px;
+}
 
