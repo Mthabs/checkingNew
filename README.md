@@ -4,6 +4,21 @@ Football quiz has been designed with an intention of having fun while getting to
 
 screen shorts
 
+Galaxy Note 3 screen
+ ![alt text](assets/images/Galaxy Note 3 screen.png)
+
+Galaxy Tab S4 screen
+ ![alt text](assets/images/Galaxy Tab S4 screen.png)
+
+ iPad Air screen
+ ![alt text](assets/images/iPad Air screen.png)
+
+ iPhone SE screen
+ ![alt text](assets/images/iPhone SE screen.png)
+
+ Laptop screen- HomePage
+ ![alt text](assets/images/Laptop screen- HomePage.png)
+
 Features
 
 Existing Features
