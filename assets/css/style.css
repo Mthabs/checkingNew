@@ -614,6 +614,7 @@ footer button.show{
            font-size: 10px;
            text-align: center;
         }
+        
         .quiz_page header .sum_qstn span{
             font-size: 10px;
             text-align: center;
@@ -661,7 +662,9 @@ footer button.show{
             width: 95%;
             height: 95%;
         }
-
+        .quiz_page header{
+            height: 23%;
+        }
         .quiz_page section{
             height: 355px;
             padding: 5px 5px;
