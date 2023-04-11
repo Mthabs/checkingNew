@@ -135,3 +135,44 @@ function startTimerLine(time){
         timeline.style.length = time + "px"; //increasing length of time_line with px by time value
     }
 }
+function displayresult(){
+    instructions.classList.remove("activeInfo"); //hide instruction page
+    quiz_page.classList.remove("activeQuiz"); //hide quiz page
+    results_page.classList.add("activeResult"); //display result box
+    const scoreText = results_page.querySelector(".score_text");
+    if (participscore > 8){ // if user scored more than 8
+        //creating a new span tag and passing the user score numberer and total question numberer
+        let scoreTag = '<span>Congratulations!!!, You got <p>'+ participscore +'</p> out of <p>'+ questions.length +'</p></span>';
+        scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
+    }
+    else if(participscore > 4){ // if user scored more than 4
+        let scoreTag = '<span>Nice!!!, You got <p>'+ participscore +'</p> out of <p>'+ questions.length +'</p></span>';
+        scoreText.innerHTML = scoreTag;
+    }
+    else{ // if user scored less than 5
+        let scoreTag = '<span>Unfortunately, You got only <p>'+ participscore +'</p> out of <p>'+ questions.length +'</p></span>';
+        scoreText.innerHTML = scoreTag;
+    }
+}
+
+const restart_quiz = results_page.querySelector(".buttons .restart");
+// if restartQuiz button clicked
+restart_quiz.onclick = ()=>{
+    quiz_page.classList.add("activeQuiz"); //display quiz page
+    results_page.classList.remove("activeResult"); //hide result page
+    participscore = 0;
+    allocated_time = 99; 
+    questionNo = 1;
+    question_index = 0;
+    length = 0;
+    displayquestions(question_index); //calling showQestions function
+    questioncount(questionNo); //passing questionNo value to questioncount
+    startTimer(allocated_time); //calling startTimer function
+    startTimerLine(lengthvalue); //calling startTimerLine function
+    next_button.classList.remove("show"); //hide the next button
+}
+const exitquiz = results_page.querySelector(".buttons .exit_quiz");
+// if quitQuiz button clicked
+exitquiz.onclick = ()=>{
+    window.location.reload(); //reload the current window
+}
