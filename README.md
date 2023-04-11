@@ -47,20 +47,20 @@ The start button is at the button center of the homepage and easy to spot it. To
  - when all the questions have been answered the result page will pop up showing score. 
  - If the time finishes before all the questions answered, the quiz page is disabled and the result page pops up and display the score.
 
-. result Page
- - the result can be congratulations for the score above 80%, Nice for the score above 50%, or Unfortunate for any score below 50%.
+Result Page
+ - The result can be congratulations for the score above 80%, Nice for the score above 50%, or Unfortunate for any score below 50%.
 
 
 Validator Testing
-HTML
+1. HTML
     There are errors that were returned when passing through the official W3C validator
     https://validator.w3.org/nu/?doc=https%3A%2F%2Fgithub.com%2FMthabs%2FcheckingNew%2Fblob%2Fmain%2Findex.html
 
-CSS
+2. CSS
     There were errors that were found when passing through the official (Jigsaw) validator
     https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fgithub.com%2FMthabs%2FcheckingNew%2Fblob%2Fmain%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
 
-JavaScript
+3. JavaScript
 
     There are 14 functions in this file.
     Function with the largest signature take 1 arguments, while the median is 0.
@@ -79,7 +79,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 In the GitHub repository, navigate to the Settings tab
 From the source section drop-down menu, select the Master Branch
 Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
-The live link can be found here - https://code-institute-org.github.io/love-maths/
+The live link can be found here - https://github.com/Mthabs/checkingNew
 
 Credits
 
