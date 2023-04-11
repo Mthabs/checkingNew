@@ -5,19 +5,19 @@ Football quiz has been designed with an intention of having fun while getting to
 screen shorts
 
 Galaxy Note 3 screen
- ![alt text](assets/images/Galaxy Note 3 screen.png)
+ ![alt text](https://github.com/Mthabs/checkingNew/blob/main/assets/images/GalaxyNote3Screen.png)
 
 Galaxy Tab S4 screen
- ![alt text](assets/images/Galaxy Tab S4 screen.png)
+ ![alt text](https://github.com/Mthabs/checkingNew/blob/main/assets/images/GalaxyTabS4screen.png)
 
  iPad Air screen
- ![alt text](assets/images/iPad Air screen.png)
+ ![alt text](https://github.com/Mthabs/checkingNew/blob/main/assets/images/iPadAirscreen.png)
 
  iPhone SE screen
- ![alt text](assets/images/iPhone SE screen.png)
+ ![alt text](https://github.com/Mthabs/checkingNew/blob/main/assets/images/iPhoneSEscreen.png)
 
  Laptop screen- HomePage
- ![alt text](assets/images/Laptop screen- HomePage.png)
+ ![alt text](https://github.com/Mthabs/checkingNew/blob/main/assets/images/LaptopscreenHomePage.png)
 
 Features
 
