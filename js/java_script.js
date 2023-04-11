@@ -100,3 +100,38 @@ function clicked_option(answer){
     next_button.classList.add("show"); //display the next button if user selected any option
 }
 
+function startTimer(time){
+    counter = setInterval(timer, 1000);
+    function timer(){
+        timeCount.textContent = time; //changing the value of timeCount with time value
+        time--; //decrement the time value
+        if(time < 0){ //if timer is less than 0
+            clearInterval(counter); //clear counter
+            clearInterval(counterLine); //clear counterLine
+         
+            
+            const allOptions = option_list.children.length; //getting all option items
+            let correctanswers = questions[question_index].answer; //getting correct answer from array
+            
+            for(i=0; i < allOptions; i++){
+                if(option_list.children[i].textContent == correctanswers){ //if there is an option which is matched to an array answer
+                    option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option 
+                }
+            }
+        
+            for(i=0; i < allOptions; i++){
+                option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
+            }
+           
+            displayresult();
+        }
+    }
+}
+
+function startTimerLine(time){
+    counterLine = setInterval(timer, 183);
+    function timer(){
+        time += 1; //incrementing time with 1
+        timeline.style.length = time + "px"; //increasing length of time_line with px by time value
+    }
+}
