@@ -208,3 +208,14 @@ border: 3px solid red;
     border: 1px solid #4FD1C5;
     transition: all 0.3s ease;
 }
+.quiz_page{
+    width: 900px;
+    height: 600px;
+    background: #fff;
+    border-radius: 30px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
