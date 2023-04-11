@@ -291,4 +291,59 @@ border: 3px solid red;
 .quiz_page header .sum_qstn span p:first-child{
     padding-left: 0px;
 }
+section{
+    padding: 25px 30px 20px 30px;
+    background: #fff;
+}
+
+section .questionz{
+    font-size: 17px;
+    font-weight: 600;
+}
+
+section .option_list{
+    padding: 20px 0px;
+    display: block;   
+}
+
+section .option_list .option{
+    background: aliceblue;
+    border: 1px solid #4FD1C5;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .option_list .option:last-child{
+    margin-bottom: 0px;
+}
+
+section .option_list .option:hover{
+    color: #feffff;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+}
+
+section .option_list .option.correct{
+    color: f3ffff;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+section .option_list .option.incorrect{
+    color: f3ffff;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+section .option_list .option.disabled{
+    pointer-events: none;
+}
+
 
