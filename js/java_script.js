@@ -127,6 +127,11 @@ function startTimer(time){
         }
     }
 }
+function questioncount(index){
+    //creating a new span tag and passing the question numberer and total question
+    let No_ofquestios = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
+    bottom_ques_counter.innerHTML = No_ofquestios;  //adding new span tag inside bottom_ques_counter
+}
 
 function startTimerLine(time){
     counterLine = setInterval(timer, 183);
