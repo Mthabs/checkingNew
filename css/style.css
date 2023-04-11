@@ -31,3 +31,29 @@ border: 3px solid red;
     height: 100px;
     margin: 30px;
   }
+  .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      font-size: 35px;
+      text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+      0px -4px 10px rgba(255,255,255,0.3);
+  }
+  .hom_main{
+    width: 50%;
+    margin: 0px auto;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px groove #4FD1C5;
+  }
+  .hom_text{
+    font-size: 14px;
+    text-shadow: 1px 0px 0px rgba(0,0,0,0.3), 
+    0px 0px 1px #4fd1c5;
+    text-align:center;
+    overflow: hidden;
+    clear: both;
+  }
+  
