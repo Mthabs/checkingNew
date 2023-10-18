@@ -125,10 +125,8 @@ function optionSelected(answer){
     if(userAns == correcAns){ //if user selected option is equal to array's correct answer
         userScore += 1; //upgrading score value with 1
         answer.classList.add("correct"); //adding green color to correct selected option
-        console.log("Your correct answers = " + userScore); 
     }else{
         answer.classList.add("incorrect"); //adding red color to correct selected option
-        console.log("Wrong Answer =" + userScore)
     }
     
     for(i=0; i < allOptions; i++){
@@ -144,18 +142,38 @@ function showResult(){
     const scoreText = results_page.querySelector(".score_text");
     if (userScore > 8){ // if user scored more than 8
         //creating a new span tag and passing the user score numberer and total question numberer
-        let scoreTag = '<span>Congratulations!!!, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p>, Congratulations!!!</span>';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
     }
     else if(userScore > 4){ // if user scored more than 4
-        let scoreTag = '<span>Nice!!!, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p>, Nice!!!</span>';
         scoreText.innerHTML = scoreTag;
     }
     else{ // if user scored less than 5
-        let scoreTag = '<span>Unfortunately, You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p>, Sorry!!!</span>';
         scoreText.innerHTML = scoreTag;
     }
 }
+/*view explanations */
+const view_explanation_btn = results_page.querySelector(".buttons .view_explanation");
+const explanations_page = document.querySelector(".explanations_page");
+const close_explanation_btn = explanations_page.querySelector(".close_button");
+// Display explanations when the button is clicked
+view_explanation_btn.addEventListener("click", function(event) {
+    event.preventDefault();
+    explanations_page.classList.add("activeExplanation"); // display explanation page
+    let explanationContent = explanations_page.querySelector(".explanation_content");
+    explanationContent.style.display = "block"; // explicitly show the content
+    results_page.classList.remove("activeResult"); // hide results page
+    fillExplanations(); // call the function that will append explanations to the page
+});
+// Close the explanation page
+close_explanation_btn.onclick = () => {
+    results_page.classList.add("activeResult"); // Display the result page
+    explanations_page.classList.remove("activeExplanation"); // Hide the explanation page
+    resetQuiz("exit", quiz_page, timeText);  // Call the resetQuiz function when the "Done" button is clicked.
+}
+
 
 function startTimer(time){
     counter = setInterval(timer, 1000);
