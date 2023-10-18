@@ -464,6 +464,31 @@ section .option_list .option.disabled{
     color: #fff;
     background: #4FD1C5;
 }
+.buttons .view_explanation{
+    color: #4FD1C5;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; 
+    min-height: 40px;
+}
+
+.buttons .view_explanation:hover{
+    color: #fff;
+    background: #4FD1C5;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px; 
+    border: none; 
+    cursor: pointer; 
+    min-height: 40px;
+}
 
 @media(min-width:1025px) {
     
