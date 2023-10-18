@@ -240,15 +240,13 @@ function startTimer(){
     }
 }
 
-function startTimerLine(time){
-    counterLine = setInterval(timer, 183);
-    function timer(){
-        time += 1; //upgrading time value with 1
-        time_line.style.width = time + "px"; //increasing width of time_line with px by time value
-        if(time > 699){ //if time value is greater than 699
-            clearInterval(counterLine); //clear counterLine
-        }
+function updateProgressionLine() {
+    // Calculate the width of the progression line based on the current question number
+    let progressionPercentage = 0 + (questionNo - 1) * (60 / questions.length); 
+    if (progressionPercentage > 80) {
+        progressionPercentage = 80;
     }
+    progression_line.style.width = progressionPercentage + "%";
 }
 
 function queCounter(index){
