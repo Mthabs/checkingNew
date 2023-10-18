@@ -489,84 +489,261 @@ section .option_list .option.disabled{
     cursor: pointer; 
     min-height: 40px;
 }
+.bonus {
+    font-size: 16px;
+    color: #f1c40f; 
+    text-align: center;
+    margin: 10px 0;
+}
 
-@media(min-width:1025px) {
-    
+.bonus h4 {
+    font-weight: bold;
+}
+
+#bonusTime {
+    font-size: 20px;
+    color: red; 
+}
+
+.next_button.show {
+    background-color: #4FD1C5; 
+    color: #ffffff; 
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.next_button.show:hover {
+    background-color: #2980b9; 
+}
+
+.explanations_page{
+    width: 95%;
+    max-height: 95vh; 
+    overflow-y: auto; 
+    background: #fff;
+    border-radius: 30px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.expl_feed{
+    min-height: 60px;
+    text-align: center;
+    padding: 10px 10px;  
+}
+
+.explanations_page .explanation_content .explanations_list{
+    min-height: 450px;
+    padding: 10px 10px;
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+.close_button{
+    margin: 0 5px;
+    min-height: 40px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #4FD1C5;
+    color: white;
+    border: 1px solid #4FD1C5;
+    transition: all 0.3s ease;
+    float: right;
+}
+
+.close_button:hover{
+    background: white;
+    color: #4FD1C5;
+}
+
+@media(min-width:901px) {
+    .home_page{
+        width: calc(60% - 20%);
+        min-height: 700px;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .logo{
+        font-size: 35px;
+    }
+    .hom_main{
+        width: 63%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .hom_text{
+        font-size: 20px;
+        flex: 1;
+        padding: 0 20px;
+    }
     .wrap{
-        height: 40%;
-        padding-top: 10px;
-        margin-top: 10px;
+        flex: 1;
+    }
+
+    .instructions{
+        width: 95%;
+        max-height: 95vh; 
+        overflow-y: auto; 
+    }
+    .instructions .instr_body{
+        padding: 5px;
+        margin: 5px;
+        font-size: 21px;
+    }
+    .quiz_page{
+        width: 95%;
+        max-height: 700px;
+        font-size: 21;  
+    }
+    .results_page{
+        width: 60%;
+        height: 60%; 
+    }
+    .quiz_page header{
+        height: 180px;
+    }
+
+    .home_page button{
+        font-size: 17px;
+        letter-spacing: 1p;
+        min-width: 90px;
+        min-height: 20px;
+    }
+    .start_quiz button::before{
+        min-width: calc(120px + 8px);
+        min-height: calc(30px + 8px);
+    }
+    .start_quiz button:hover::after, .start_quiz button:focus::after {
+        animation: none;
+        display: none;
+        }
+        
+        @keyframes ring {
+        0% {
+            width: 40px;
+            height: 40px;
+            opacity: 1;
+        }
+        100% {
+            position:absolute;
+            width: 120px;
+            height: 120px;
+            opacity: 0.5;
+        }
+    }
+    .explanations_page{
+        width: 98%;
+        height: 98%;
+    }
+    
+    .explanations_list{
+        height: auto;
+        padding: 5px 5px;
+        margin: 5px 5px;
+        font-size: 18px;
+        overflow: auto;
     }
 }
-    @media(min-width:769px) and (max-width:1024px){
+@media(min-width:769px) and (max-width:900px){
        
-        .home_page{
-            width: 95%;
-            height: 620px;
+    .home_page{
+        width: 95%;
+        min-height: 700px;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .logo{
+        font-size: 20px;
+    }
+    .hom_main{
+        width: 63%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .hom_text{
+        font-size: 12px;
+        flex: 1;
+    }
+    .wrap{
+        flex: 1;
+    }
+    .instructions{
+        width: 95%;
+        max-height: 95vh; 
+        overflow-y: auto;
+        font-size: 21;
+    }
+    .instructions .instr_body{
+        padding: 5px;
+        margin: 5px;
+        font-size: 21px;
+    }
+    .quiz_page{
+        width: 95%;
+        max-height: 95vh;
+        overflow-y: auto;
+        font-size: 21;  
+    }
+    .results_page{
+        width: 70%;
+        min-height: 50vh; 
+        display: flex;
+    }
+    .quiz_page header{
+        height: 180px;
+    }
+    .home_page button{
+        font-size: 17px;
+        letter-spacing: 1p;
+        min-width: 90px;
+        min-height: 20px;
+    }
+    .start_quiz button::before{
+        min-width: calc(115px + 7px);
+        min-height: calc(20px + 7px);
+    }
+    .start_quiz button:hover::after, .start_quiz button:focus::after {
+        animation: none;
+        display: none;
         }
-        .logo{
-            font-size: 20px;
+        
+        @keyframes ring {
+        0% {
+            width: 30px;
+            height: 30px;
+            opacity: 1;
         }
-        .hom_main{
-            width: 63%;
-        }
-        .hom_text{
-            font-size: 12px;
-        }
-        .wrap{
-            height: 40%;
-            width: 38%;
-        }
-        .instructions{
-            width: 95%;
-            height: 95%;
-            font-size: 21;
-        }
-        .quiz_page{
-            width: 95%;
-            height: 95%;
-            font-size: 21;  
-        }
-        .results_page{
-            width: 50%;
-            height: 50%; 
-        }
-        .quiz_page header{
-            height: 180px;
-        }
-        .quiz_page header .time_line{
-            margin-left: 20px;
-        }
-
-        .home_page button{
-            font-size: 17px;
-            letter-spacing: 1p;
-            min-width: 90px;
-            min-height: 20px;
-        }
-        .start_quiz button::before{
-            min-width: calc(115px + 7px);
-            min-height: calc(20px + 7px);
-        }
-        .start_quiz button:hover::after, .start_quiz button:focus::after {
-            animation: none;
-            display: none;
-          }
-          
-          @keyframes ring {
-            0% {
-              width: 30px;
-              height: 30px;
-              opacity: 1;
-            }
-            100% {
-              position:absolute;
-              width: 115px;
-              height: 115px;
-              opacity: 0.5;
-            }
+        100% {
+            position:absolute;
+            width: 115px;
+            height: 115px;
+            opacity: 0.5;
         }
     }
+    .explanations_page{
+        width: 98%;
+        max-height: 98vh; 
+        overflow-y: auto; 
+    }
+    
+    .explanations_list{
+        padding: 5px;
+        margin: 5px;
+        font-size: 16px;
+        overflow: auto;
+    }
+}
     @media (min-width:481px) and (max-width:769px) {
         .home_page{
             width: 95%;
