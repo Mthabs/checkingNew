@@ -173,6 +173,35 @@ close_explanation_btn.onclick = () => {
     explanations_page.classList.remove("activeExplanation"); // Hide the explanation page
     resetQuiz("exit", quiz_page, timeText);  // Call the resetQuiz function when the "Done" button is clicked.
 }
+function resetQuiz(action, quizPageElement, timeTextElement) {
+    // Resetting all quiz states and counters:
+    clearInterval(counter);  // Clear the countdown timer.
+    clearInterval(counterLine);  // Clear the timeline timer.
+
+    duration = 99;
+    question_index = 0;
+    questionNo = 1;
+    userScore = 0;
+    length_value = 0;
+    progressionLine.style.width = length_value + "px";
+
+    // Resetting the view:
+    explanations_page.classList.remove("activeExplanation");
+    quizPageElement.classList.remove("activeQuiz"); // Use the passed quizPageElement
+    results_page.classList.remove("activeResult");
+
+    if (action === "exit") {
+        document.querySelector(".home_page").classList.add("activeHome");
+    } else if (action === "restart") {
+        quizPageElement.classList.add("activeQuiz"); // Use the passed quizPageElement
+        showQuestions(question_index);
+        queCounter(questionNo);
+        startTimer(duration);
+        timeTextElement.textContent = "Time Left"; // Use the passed timeTextElement
+        next_button.classList.remove("show");
+        updateProgressionLine();  // Reset progression line at the restart of the quiz
+    }
+}
 
 
 function startTimer(time){
