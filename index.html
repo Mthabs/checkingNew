@@ -53,7 +53,7 @@
                 <div class="show-time">Time Left</div>
                 <div class="count_down">100</div>
             </div>
-            <div class="time_line"></div>
+            <div class="progression_line"></div>
             <div>
                 <div class="sum_qstn"></div>
                 <!-- I have add Question Count Number from JavaScript -->
@@ -65,6 +65,9 @@
             </div>
             <div class="option_list">
                 <!-- I have add options from JavaScript -->
+            </div>
+            <div class="bonus">
+                <h4>Bonus Time: <span id="bonusTime">0</span>s</h4>
             </div>
         </section>
         <!-- Footer of Quiz page -->
@@ -85,6 +88,17 @@
             <button class="restart">RESTART</button>
             <button class="exit_quiz">EXIT</button>
         </div>
+    </div>
+    <div class="explanations_page">
+        <div class="explanation_content">
+            <div class="expl_feed"><h3>Feedback</h3></div>
+            <hr>
+            <div class="explanations_list">
+                <!-- Explanations will be appended here dynamically from java_script.js -->
+        </div>
+    </div>
+        <hr>
+        <button class="close_button">done</button>
     </div>
       <!-- This JavaScript file contain Questions and Options only -->
       <script src="/assets/js/java_questions.js"></script>
