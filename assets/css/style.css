@@ -744,143 +744,174 @@ section .option_list .option.disabled{
         overflow: auto;
     }
 }
-    @media (min-width:481px) and (max-width:769px) {
-        .home_page{
-            width: 95%;
-        }
-        .logo{
-            font-size: 25px;
-        }
-        .hom_main{
-            width: 65%;
-            height: 40%;
-        }
-        .hom_text{
-            font-size: 10px;
-            height: 350px;
-        }
-        .wrap{
-            height: 40%;
-        }
-        .home_page button{
-            font-size: 12px;
-            letter-spacing: 1p;
-            min-width: 90px;
-            min-height: 15px;
-            overflow: hidden;
-            clear: both;
-        }
-        .start_quiz button::before{
-            min-width: calc(90px + 4px);
-            min-height: calc(15px + 4px);
-        }
-        .start_quiz button:hover::after, .start_quiz button:focus::after {
-            animation: none;
-            display: none;
-          }
-          
-          @keyframes ring {
-            0% {
-              width: 25px;
-              height: 25px;
-              opacity: 1;
-            }
-            100% {
-              position:absolute;
-              width: 90px;
-              height: 90px;
-              opacity: 0.5;
-            }
-        }
-        .instructions{
-            width: 95%;
-            height: 95%;
+@media (min-width:481px) and (max-width:769px) {
+    .home_page{
+        width: 95%;
+        min-height: 700px;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .logo{
+        font-size: 25px;
+    }
+    .hom_main{
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .hom_text{
+        font-size: 14px;
+        flex: 1;
+        margin: 0 auto;
+    }
+    .wrap{
+        flex: 1;
+        margin: 5px;
+    }
+    .home_page button{
+        font-size: 12px;
+        letter-spacing: 1p;
+        min-width: 90px;
+        min-height: 15px;
+        overflow: hidden;
+        clear: both;
+    }
+    .start_quiz button::before{
+        min-width: calc(90px + 4px);
+        min-height: calc(15px + 4px);
+    }
+    .start_quiz button:hover::after, .start_quiz button:focus::after {
+        animation: none;
+        display: none;
         }
         
-        .instructions .instr_body{
-            height: 355px;
-            padding: 5px 5px;
-            margin: 5px 5px;
-            font-size: 21px;
+        @keyframes ring {
+        0% {
+            width: 25px;
+            height: 25px;
+            opacity: 1;
         }
-        .quiz_page{
-            width: 95%;
-            height: 95%;
-        }
-
-        .quiz_page section{
-            height: 355px;
-            padding: 5px 5px;
-            margin: 5px 5px;
-            font-size: 21px;
-        }
-        .results_page{
-            width: 70%;
-            height: 50%;
-        }
-        .results_page .score_text span{
-            font-size: 15px;
-        }
-        .quiz_page header .quiz_head{
-           font-size: 10px;
-           text-align: center;
-        }
-        
-        .quiz_page header .sum_qstn span{
-            font-size: 10px;
-            text-align: center;
-            display: inline-block;
-        }
-        .quiz_page header .clock .show-time{
-            font-size: 10px;
-
-        }
-        .quiz_page header .time_line{
-            margin-left: 20px;
+        100% {
+            position:absolute;
+            width: 90px;
+            height: 90px;
+            opacity: 0.5;
         }
     }
+    .instructions{
+        width: 95%;
+        max-height: 95vh; 
+        overflow-y: auto;
+    }
+    
+    .instructions .instr_body{
+        padding: 5px;
+        margin: 5px;
+        font-size: 21px;
+    }
+    .quiz_page{
+        width: 95%;
+        max-height: 95vh; 
+        overflow-y: auto;
+    }
+
+    .quiz_page section{
+        height: auto;
+        padding: 5px 5px;
+        margin: 5px 5px;
+        font-size: 21px;
+    }
+    .results_page{
+        width: 70%;
+        height: 50%;
+    }
+    .results_page .score_text span{
+        font-size: 15px;
+    }
+    .quiz_page header .quiz_head{
+        font-size: 10px;
+        text-align: center;
+    }
+    
+    .quiz_page header .sum_qstn span{
+        font-size: 10px;
+        text-align: center;
+        display: inline-block;
+    }
+    .quiz_page header .clock .show-time{
+        font-size: 10px;
+
+    }
+    .results_page .buttons button{
+        font-size: 12px;
+    }
+
+    .explanations_page{
+        width: 98%;
+        max-height: 98vh;
+        overflow-y: auto;
+    }
+    
+    .explanations_list{
+        padding: 5px;
+        margin: 5px;
+        font-size: 16px;
+        overflow: auto;
+    }
+}
 
     @media (min-width:320px) and (max-width:480px) {
         .home_page{
             width: 100%;
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 620px;
+            min-height: 700px;
+            margin: 0 auto;
         }
 
         .logo{
-            font-size: 14px;
+            font-size: 18px;
         }
         .hom_main{
             width: 95%;
+            display: flex;
+            justify-content: space-between;
         }
         .hom_text{
-            font-size: 10px;
+            font-size: 13px;
+            flex: 1;
+            margin: 0 auto;
+        }
+        .wrap{
+            flex: 1;
+            margin: 5px;
         }
         .instructions{
             width: 95%;
-            height: 95%;
+            max-height: 95vh;
+            overflow-y: auto;
         }
         
         .instructions .instr_body{
-            height: 355px;
-            padding: 5px 5px;
-            margin: 5px 5px;
+            height: auto;
+            padding: 5px;
+            margin: 5px;
             font-size: 21px;
         }
         .quiz_page{
             width: 95%;
-            height: 95%;
+            max-height: 95vh; 
+            overflow-y: auto;
         }
         .quiz_page header{
-            height: 23%;
+            height: 20%;
         }
         .quiz_page section{
-            height: 355px;
-            padding: 5px 5px;
-            margin: 5px 5px;
-            font-size: 21px;
+            padding: 5px;
+            margin: 5px;
+            font-size: 15px;
+            margin-bottom: 50px;
         }
         .results_page{
             width: 98%;
@@ -888,6 +919,9 @@ section .option_list .option.disabled{
         .results_page .score_text span{
             font-size: 15px;
         }
+        .results_page .buttons button{
+            font-size: 12px;
+            }
         .quiz_page header .quiz_head{
            font-size: 10px;
            text-align: center;
@@ -900,18 +934,28 @@ section .option_list .option.disabled{
         .quiz_page header .clock .show-time{
             font-size: 10px;
         }
-        .quiz_page header .time_line{
-            display: none;
+        .explanations_page{
+            width: 98%;
+            max-height: 98vh;
+            overflow-y: auto;
         }
-
+        
+        .explanations_list{
+            padding: 5px;
+            margin: 5px;
+            font-size: 16px;
+            overflow: auto;
+        }
     }
     @media (max-width:320px) {
         .home_page{
-            width: 100%;
-            display: flex;
+            width: 100% ;
+            min-height: 700px ;
+            display: flex ;
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            height: 620px;
+            align-items: center ;
+            margin: 0 auto;
         }
 
         .logo{
@@ -919,38 +963,51 @@ section .option_list .option.disabled{
         }
         .hom_main{
             width: 95%;
+            display: flex;
+            justify-content: space-between;
         }
         .hom_text{
-            font-size: 10px;
+            font-size: 11px;
+            flex: 1;
+            margin: 5px;
+        }
+        .wrap{
+            flex: 1;
+            margin: 5px;
         }
         .instructions{
-            width: 95%;
-            height: 95%;
+            width: 98%;
+            max-height: 95vh; 
+            overflow-y: auto;
         }
         
         .instructions .instr_body{
-            height: 355px;
-            padding: 5px 5px;
-            margin: 5px 5px;
-            font-size: 18px;
+            padding: 5px;
+            margin: 5px;
+            font-size: 16px;
         }
         .quiz_page{
-            width: 95%;
-            height: 95%;
+            width: 98%;
+            max-height: 95vh;
+            overflow-y: auto;
         }
 
         .quiz_page section{
-            height: 355px;
-            padding: 5px 5px;
-            margin: 5px 5px;
-            font-size: 21px;
+            padding: 5px;
+            margin: 5px;
+            font-size: 15px;
+            margin-bottom: 50px;
         }
         .results_page{
             width: 98%;
-            height: 95%;
+            height: 98%;
         }
         .results_page .score_text span{
             font-size: 15px;
+        }
+        .results_page .buttons{
+            display: inline-block;
+            align-items: center;
         }
         .quiz_page header .quiz_head{
            font-size: 10px;
@@ -966,8 +1023,20 @@ section .option_list .option.disabled{
             font-size: 10px;
             width: 30px;
         }
-        .quiz_page header .time_line{
-            display: none;
+        .results_page .buttons button{
+            font-size: 10px;
+            }
+        .explanations_page{
+            width: 98%;
+            max-height: 98vh;
+            overflow-y: auto;
+        }
+        
+        .explanations_list{
+            padding: 5px;
+            margin: 5px;
+            font-size: 16px;
+            overflow: auto;
         }
 
     }
