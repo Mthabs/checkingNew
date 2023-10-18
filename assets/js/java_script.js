@@ -8,7 +8,7 @@ const continue_btn = instructions.querySelector(".buttons .restart");
 const quiz_page = document.querySelector(".quiz_page");
 const timeText = document.querySelector(".clock .show-time");
 const timeCount = document.querySelector(".clock .count_down");
-const time_line = document.querySelector("header .time_line");
+const progression_line = document.querySelector(".quiz_page header .progression_line");
 const option_list = document.querySelector(".option_list");
 /*result*/ 
 const results_page = document.querySelector(".results_page");
@@ -25,42 +25,35 @@ exit_btn.onclick = ()=>{
 }
 
 // if continueQuiz button clicked
-continue_btn.onclick = ()=>{
-    instructions.classList.remove("activeInfo"); //hide instruction page
-    quiz_page.classList.add("activeQuiz"); //display quiz page
-    showQuetions(0); //calling showQestions function
-    queCounter(1); //passing 1 parameter to queCounter
-    startTimer(99); //calling startTimer function
-    startTimerLine(0); //calling startTimerLine function
+continue_btn.onclick = () => {
+    questions = getRandomQuestions([...allQuestions]);
+    instructions.classList.remove("activeInfo");
+    quiz_page.classList.add("activeQuiz");
+    showQuestions(question_index);
+    queCounter(questionNo);
+    startTimer(duration);
+    timeText.textContent = "Time Left";
+    next_button.classList.remove("show");
+    updateProgressionLine();  // Reset progression line at the start of the quiz
 }
 
 let duration =  99;
+let currentTimeOnLine = 0;
 let question_index = 0;
 let questionNo = 1;
 let userScore = 0;
 let counter;
 let counterLine;
 let length_value = 0;
-
+progressionLine = document.querySelector(".quiz_page header .progression_line");
 const restart_quiz = results_page.querySelector(".buttons .restart");
 const quit_quiz = results_page.querySelector(".buttons .exit_quiz");
 
 // if restartQuiz button clicked
-restart_quiz.onclick = ()=>{
-    quiz_page.classList.add("activeQuiz"); //display quiz page
-    results_page.classList.remove("activeResult"); //hide result page
-    duration = 99; 
-    question_index = 0;
-    questionNo = 1;
-    userScore = 0;
-    length_value = 0;
-    showQuetions(question_index); //calling showQestions function
-    queCounter(questionNo); //passing questionNo value to queCounter
-    startTimer(duration); //calling startTimer function
-    startTimerLine(length_value); //calling startTimerLine function
-    timeText.textContent = "Time Left"; //change the text of timeText to Time Left
-    next_button.classList.remove("show"); //hide the next button
-}
+restart_quiz.onclick = () => {
+    questions = getRandomQuestions([...allQuestions]);
+    resetQuiz("restart", quiz_page, timeText); // Pass quiz_page and timeText as arguments
+};
 
 // if quitQuiz button clicked
 quit_quiz.onclick = ()=>{
@@ -75,6 +68,7 @@ next_button.onclick = ()=>{
     if(question_index < questions.length - 1){ //if question count is less than total question length
         question_index++; //increment the question_index value
         questionNo++; //increment the questionNo value
+        document.getElementById('bonusTime').innerText = "5";
         showQuetions(question_index); //calling showQestions function
         queCounter(questionNo); //passing questionNo value to queCounter
         timeText.textContent = "Time Left"; //change the timeText to Time Left
@@ -84,6 +78,7 @@ next_button.onclick = ()=>{
         clearInterval(counterLine); //clear counterLine
         showResult(); //calling showResult function
     }
+    updateProgressionLine();
 }
 
 // getting questions and options from array
@@ -91,7 +86,7 @@ function showQuetions(index){
     const que_text = document.querySelector(".questionz");
 
     //creating a new span and div tag for question and option and passing the value using array index
-    let que_tag = '<span>'+ questions[index].number + ". " + questions[index].question +'</span>';
+    let que_tag = '<span>' + questions[index].question + '</span>';
     let option_tag = '<div class="option">'+ questions[index].options[0] +'</div>'
     + '<div class="option">'+ questions[index].options[1] +'</div>'
     + '<div class="option">'+ questions[index].options[2] +'</div>'
@@ -105,6 +100,19 @@ function showQuetions(index){
     for(i=0; i < option.length; i++){
         option[i].setAttribute("onclick", "optionSelected(this)");
     }
+    resetBonusTime();
+}
+function resetBonusTime() {
+    let bonusTime = 5; // 5 seconds bonus time
+    document.getElementById("bonusTime").innerText = bonusTime;
+    let bonusTimeCounter = setInterval(function() {
+        if(bonusTime > 0) {
+            bonusTime--;
+            document.getElementById("bonusTime").innerText = bonusTime;
+        } else {
+            clearInterval(bonusTimeCounter);
+        }
+    }, 1000);
 }
 
 //if user clicked on option
