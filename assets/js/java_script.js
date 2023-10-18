@@ -202,37 +202,40 @@ function resetQuiz(action, quizPageElement, timeTextElement) {
         updateProgressionLine();  // Reset progression line at the restart of the quiz
     }
 }
+function fillExplanations(){
+    let explanationHTML = '';
+    questions.forEach((q, index) => {
+        explanationHTML += `<div class="single_explanation">
+                                <h4>Question ${index + 1}: ${q.question}</h4>
+                                <p>${q.explanation}</p>
+                            </div>`;
+    });
+    document.querySelector(".explanations_list").innerHTML = explanationHTML;
+}
 
-
-function startTimer(time){
+function startTimer(){
+    timeCount.textContent = duration;
     counter = setInterval(timer, 1000);
+    
     function timer(){
-        timeCount.textContent = time; //changing the value of timeCount with time value
-        time--; //decrement the time value
-        if(time < 9){ //if timer is less than 9
+        timeCount.textContent = duration; // Reflects the value of countdown time inside timeCount
+        duration--; // Decrement the duration
+        
+        if(duration < 10){ // If duration is less than 9
             let addZero = timeCount.textContent; 
-            timeCount.textContent = "0" + addZero; //add a 0 before time value
+            timeCount.textContent = "0" + addZero; // Add a 0 before time value
         }
-        if(time < 0){ //if timer is less than 0
-            clearInterval(counter); //clear counter
-            timeText.textContent = "Time Off"; //change the time text to time off
-            
-            const allOptions = option_list.children.length; //getting all option items
         
-            let correcAns = questions[question_index].answer; //getting correct answer from array
+        if(duration < 0){ // If duration is less than 0
+            clearInterval(counter); // Clear counter
+            timeText.textContent = "Time Off"; // Change the time text to time off
+            const allOptions = option_list.children.length; // Get all option items
             
             for(i=0; i < allOptions; i++){
-                if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer
-                    option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
-                    console.log("Time Off"); 
-                }
+                option_list.children[i].classList.add("disabled"); // Once user selects an option, disable all options
             }
-        
-            for(i=0; i < allOptions; i++){
-                option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
-            }
-           
-            showResult();
+            
+            showResult(); // Call showResult function when the timer runs out
         }
     }
 }
