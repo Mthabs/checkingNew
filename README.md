@@ -87,20 +87,29 @@ The Quiz Page is designed not only to test knowledge but also to maintain user e
 1. #### HTML
 
     There are errors that were returned when passing through the official W3C validator
-    https://validator.w3.org/nu/?doc=https%3A%2F%2Fgithub.com%2FMthabs%2FcheckingNew%2Fblob%2Fmain%2Findex.html
+    https://validator.w3.org/nu/?doc=https%3A%2F%2Fmthabs-checkingnew-lc9p0en9pl.us2.codeanyapp.com%2F%23%2Fworkspaces%2FcheckingNew#textarea
+    
+    ![alt text](https://github.com/Mthabs/checkingNew/blob/main/assets/images/index.png?raw=true)
 
 2. #### CSS
 
     There were errors that were found when passing through the official (Jigsaw) validator
-    https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fgithub.com%2FMthabs%2FcheckingNew%2Fblob%2Fmain%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+    https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmthabs-checkingnew-lc9p0en9pl.us2.codeanyapp.com%2F%23%2Fworkspaces%2FcheckingNew&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+    
+    ![alt text](https://github.com/Mthabs/checkingNew/blob/main/assets/images/css.png?raw=true)
+
 
 3. #### JavaScript
 
-    There are 14 functions in this file.
-    Function with the largest signature take 1 arguments, while the median is 0.
-    Largest function has 17 statements in it, while the median is 5.
-    The most complex function has a cyclomatic complexity value of 6 while the median is 1.
-    52 warnings
+    **Metrics**
+    - There are 20 functions in this file.
+    - unction with the largest signature take 3 arguments, while the median is 0.
+    - Largest function has 20 statements in it, while the median is 3.5.
+    - The most complex function has a cyclomatic complexity value of 4 while the median is 1.
+    - 65 warnings
+
+    
+    ![alt text](https://github.com/Mthabs/checkingNew/blob/main/assets/images/script.png?raw=true)
 
 ### Unfixed Bugs
 
