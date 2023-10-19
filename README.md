@@ -5,6 +5,9 @@ The Football Quiz App is an interactive web application designed to engage footb
 
 #### Screen shorts
 
+Home Page
+ ![alt text](https://github.com/Mthabs/checkingNew/blob/main/assets/images/homepage.png?raw=true)
+
 Galaxy Note 3 screen
  ![alt text](https://github.com/Mthabs/checkingNew/blob/main/assets/images/galaxynote3.png?raw=true)
 
