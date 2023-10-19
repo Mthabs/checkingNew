@@ -102,18 +102,18 @@ The Quiz Page is designed not only to test knowledge but also to maintain user e
 3. #### JavaScript
 
     **Metrics**
-    - There are 20 functions in this file.
+    - There are 21 functions in this file.
     - unction with the largest signature take 3 arguments, while the median is 0.
     - Largest function has 20 statements in it, while the median is 3.5.
     - The most complex function has a cyclomatic complexity value of 4 while the median is 1.
-    - 65 warnings
+    - 72 warnings
 
     
     ![alt text](https://github.com/Mthabs/checkingNew/blob/main/assets/images/script.png?raw=true)
 
 ### Unfixed Bugs
 
-    There were a number of bugs that were detected by the validators, which I couldn't resolve because of time constraints which were caused by issues I encountered when migrating from Gitpod to codeanywhere.
+    - There were no bugs that were detected by the validators, only the warnings were found.
 
 ### Deployment
 
