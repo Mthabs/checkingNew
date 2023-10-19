@@ -60,7 +60,6 @@ let allQuestions = [
       "Argentina 1986"
     ]
   },
-  
     {
     number: 6,
     question: "Which club has won the most Champions League titles?",

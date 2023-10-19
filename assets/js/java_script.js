@@ -45,6 +45,7 @@ let userScore = 0;
 let counter;
 let counterLine;
 let length_value = 0;
+let progressionLine;
 progressionLine = document.querySelector(".quiz_page header .progression_line");
 const restart_quiz = results_page.querySelector(".buttons .restart");
 const quit_quiz = results_page.querySelector(".buttons .exit_quiz");
@@ -69,7 +70,7 @@ next_button.onclick = ()=>{
         question_index++; //increment the question_index value
         questionNo++; //increment the questionNo value
         document.getElementById('bonusTime').innerText = "5";
-        showQuetions(question_index); //calling showQestions function
+        showQuestions(question_index); //calling showQestions function
         queCounter(questionNo); //passing questionNo value to queCounter
         timeText.textContent = "Time Left"; //change the timeText to Time Left
         next_button.classList.remove("show"); //hide the next button
@@ -82,7 +83,7 @@ next_button.onclick = ()=>{
 }
 
 // getting questions and options from array
-function showQuetions(index){
+function showQuestions(index){
     const que_text = document.querySelector(".questionz");
 
     //creating a new span and div tag for question and option and passing the value using array index
@@ -125,8 +126,14 @@ function optionSelected(answer){
     if(userAns == correcAns){ //if user selected option is equal to array's correct answer
         userScore += 1; //upgrading score value with 1
         answer.classList.add("correct"); //adding green color to correct selected option
+        console.log("Your correct answers = " + userScore);
+    
+        // Add bonus time to the timer
+        duration += parseInt(document.getElementById("bonusTime").innerText);
+
     }else{
         answer.classList.add("incorrect"); //adding red color to correct selected option
+        console.log("Wrong Answer =" + userScore);
     }
     
     for(i=0; i < allOptions; i++){
@@ -171,7 +178,7 @@ view_explanation_btn.addEventListener("click", function(event) {
 close_explanation_btn.onclick = () => {
     results_page.classList.add("activeResult"); // Display the result page
     explanations_page.classList.remove("activeExplanation"); // Hide the explanation page
-    resetQuiz("exit", quiz_page, timeText);  // Call the resetQuiz function when the "Done" button is clicked.
+   // resetQuiz("exit", quiz_page, timeText);  // Call the resetQuiz function when the "Done" button is clicked.
 }
 function resetQuiz(action, quizPageElement, timeTextElement) {
     // Resetting all quiz states and counters:
@@ -221,7 +228,7 @@ function startTimer(){
         timeCount.textContent = duration; // Reflects the value of countdown time inside timeCount
         duration--; // Decrement the duration
         
-        if(duration < 10){ // If duration is less than 9
+        if(duration < 10){ // If duration is less than 10
             let addZero = timeCount.textContent; 
             timeCount.textContent = "0" + addZero; // Add a 0 before time value
         }
